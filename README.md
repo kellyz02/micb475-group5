@@ -1,6 +1,7 @@
 # MICB475-Group5-Agenda & Meeting Minutes
 ## Jeyah Cruz, Emilie Haniak, Sherrill Li, Catherine Pepin, Kelly Zhang
 ### 05/Feb/2025
+_Meeting minutes: Jeyah_
 **Discussion**
 
 Datasets/Topics of Interest
@@ -23,4 +24,32 @@ Datasets/Topics of Interest
 
 **Action Items**
 
+### 12/Feb/2025
+_Meeting minutes: Emilie_
 
+### 19/Feb/2025 (note: meeting by request)
+_Meeting minutes: Sherrill_
+
+### 26/Feb/2025
+_Meeting minutes: Cat_
+
+### 05/Mar/2025
+_Meeting minutes: Kelly_
+
+### 12/Mar/2025
+_Meeting minutes: Jeyah_
+
+### 19/Mar/2025
+_Meeting minutes: Emilie_
+
+### 26/Mar/2025
+_Meeting minutes: Sherrill_
+
+### 02/Apr/2025
+_Meeting minutes: Cat_
+
+### 09/Apr/2025 (note: meeting by request)
+_Meeting minutes: Kelly_
+
+### 16/Apr/2025 (note: meeting by request)
+_Meeting minutes: Jeyah_
