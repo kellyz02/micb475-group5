@@ -2,6 +2,7 @@
 ## Jeyah Cruz, Emilie Haniak, Sherrill Li, Catherine Pepin, Kelly Zhang
 ### 05/Feb/2025
 _Meeting minutes: Jeyah_
+
 **Discussion**
 
 Datasets/Topics of Interest
@@ -23,6 +24,8 @@ Datasets/Topics of Interest
 - Potential datasets that didn’t make the cut: Gastric cancer, Alcohol, & MS
 
 **Action Items**
+
+
 
 ### 12/Feb/2025
 _Meeting minutes: Emilie_
