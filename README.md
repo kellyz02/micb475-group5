@@ -1,11 +1,10 @@
 # MICB475-Group5-Agenda & Meeting Minutes
-## Jeyah Cruz, Emilie Haniak, Sherrill Li, Catherine Pepin, Kelly Zhang
-### 05/Feb/2025
+## 05/Feb/2025
 _Meeting minutes: Jeyah_
 
-**Discussion**
+### Discussion 
 
-Datasets/Topics of Interest
+**Datasets/Topics of Interest** 
 - Zoo captivity
   - Does a certain diet type exacerbate the impact of captivity on the animal’s microbiome?
     - The study seems to already cover this main question by investigating diet type/diet breadth on microbiome diversity.  
@@ -23,36 +22,36 @@ Datasets/Topics of Interest
   - How does stunting impact the microbiomes of children in general (treating the 2 datasets as 1 big one)?
 - Potential datasets that didn’t make the cut: Gastric cancer, Alcohol, & MS
 
-**Action Items**
+### Action Items
 
 
 
-### 12/Feb/2025
+## 12/Feb/2025
 _Meeting minutes: Emilie_
 
-### 19/Feb/2025 (note: meeting by request)
+## 19/Feb/2025 (note: meeting by request)
 _Meeting minutes: Sherrill_
 
-### 26/Feb/2025
+## 26/Feb/2025
 _Meeting minutes: Cat_
 
-### 05/Mar/2025
+## 05/Mar/2025
 _Meeting minutes: Kelly_
 
-### 12/Mar/2025
+## 12/Mar/2025
 _Meeting minutes: Jeyah_
 
-### 19/Mar/2025
+## 19/Mar/2025
 _Meeting minutes: Emilie_
 
-### 26/Mar/2025
+## 26/Mar/2025
 _Meeting minutes: Sherrill_
 
-### 02/Apr/2025
+## 02/Apr/2025
 _Meeting minutes: Cat_
 
-### 09/Apr/2025 (note: meeting by request)
+## 09/Apr/2025 (note: meeting by request)
 _Meeting minutes: Kelly_
 
-### 16/Apr/2025 (note: meeting by request)
+## 16/Apr/2025 (note: meeting by request)
 _Meeting minutes: Jeyah_
