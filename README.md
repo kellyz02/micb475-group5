@@ -2,7 +2,8 @@
 ## Jeyah Cruz, Emilie Haniak, Sherrill Li, Catherine Pepin, Kelly Zhang
 ### 05/Feb/2025
 **Discussion**
-Datasets of interest
+
+Datasets/Topics of Interest
 - Zoo captivity
   - Does a certain diet type exacerbate the impact of captivity on the animal’s microbiome?
     - The study seems to already cover this main question by investigating diet type/diet breadth on microbiome diversity.  
@@ -19,6 +20,7 @@ Datasets of interest
   - Comparative analysis of the impact of anemia vs. infant feeding on stunting? 
   - How does stunting impact the microbiomes of children in general (treating the 2 datasets as 1 big one)?
 - Potential datasets that didn’t make the cut: Gastric cancer, Alcohol, & MS
+
 **Action Items**
 
 
