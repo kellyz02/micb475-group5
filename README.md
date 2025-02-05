@@ -22,7 +22,34 @@ _Meeting minutes: Jeyah_
   - How does stunting impact the microbiomes of children in general (treating the 2 datasets as 1 big one)?
 - Potential datasets that didn’t make the cut: Gastric cancer, Alcohol, & MS
 
+### Meeting Minutes
+
+**Final choice: Zoo captivity dataset** 
+- TWO MAIN IDEAS:
+  - Comparing geographical locations
+  - Comparing within family
+- We will start off exploratory → hard to write a proposal
+  - All orders separated by location?
+  - Not everything is going to be significantly different
+  - It would be cool if one is significant (even if insignificant factor, that finding is still a result)  → we do a functional analysis → tease out different metadata categories within that group
+  - We’ll start with analyzing everything, then compare between families maybe?
+
+**Next steps: Exploratory data analysis** 
+- Create several different metadata files and phylo seq objects
+- Have one filter per order
+- For each order, explore different locations
+- Do diversity metrics on them (IN R; Evelyn suggests not to do it in qiime as R is more flexible)
+- Depending on what we find, choose which one(s) is/are significant 
+
+**Things to keep in mind**
+- Keep a copy of every file you generate. Qza and qzv
+- ZOO DATASET IS BIG
+  - It will probably take full days to denoise and demultiplex → detached screen
+- Make decisions as a team (e.g., what rarefaction parameter?) → we can even ask bessie for her input
+
 ### Action Items
+- Read through proposal documents on Canvas (everyone)
+- Have an idea for proposal outline (everyone)
 
 
 
