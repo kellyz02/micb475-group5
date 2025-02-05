@@ -15,7 +15,7 @@ _Meeting minutes: Jeyah_
   - Question for the TA: If we were to use this dataset, is it best to focus on specific species, rather than all the species sampled?
 - Anemia / Infant (potentially combining the two)
   - How do the microbiomes of children who are stunted or wasted compare? 
-  - Composition? Richness? Abundance? 
+    - Composition? Richness? Abundance? 
   - Could potentially look at stunting or wasting individually between the two datasets
   - Compare microbiomes from children stunting and wasting from two different locations 
   - Comparative analysis of the impact of anemia vs. infant feeding on stunting? 
