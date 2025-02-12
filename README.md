@@ -56,8 +56,8 @@ _Meeting minutes: Jeyah_
 ## 12/Feb/2025
 _Meeting minutes: Emilie_
 **Preliminary agenda (written 11/2/2025):** 
- -Quiime 2 data processing underway. Demux file has been created and there are ongoing disucssions being held about truncation length.  
- -Proposal planning underway with the following assingments: 
+ - Quiime 2 data processing underway. Demux file has been created and there are ongoing disucssions being held about truncation length.  
+ - Proposal planning underway with the following assingments: 
       - Introduction and Background: Emilie (and Jeyah) 
       - Research Objective: Jeyah (and Emilie) 
       - Experimental Aims and rationale: Sherrill 
@@ -65,7 +65,7 @@ _Meeting minutes: Emilie_
       - Dataset overview: Catherine  
       - Timeline (Gantt Chart): Jeyah
       - Participation report: Everyone 
--Phyloseq script will be created, and everyone will pick different metadata objects to explore further. Analysis and metrics will be run (by saturday) and results will be discussed on team meeting scheduled next tuesday. 
+- Phyloseq script will be created, and everyone will pick different metadata objects to explore further. Analysis and metrics will be run (by saturday) and results will be discussed on team meeting scheduled next tuesday. 
 
 
 ## 19/Feb/2025 (note: meeting by request)
