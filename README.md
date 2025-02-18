@@ -71,8 +71,15 @@ _Meeting minutes: Emilie_
 ## 18/Feb/2025 (note: meeting by request)
 _Meeting minutes: Sherrill_
 
-*Agenda (written Feb 17):*
-- testing
+**Agenda (written Feb 17):**
+- Informal meeting to get our bearings!
+      - Updated qiime results?
+      - Update on truncation lengths from Evelyn?
+      - Any further clarifications and planning on proposal ***(due Sun, Feb 23)***
+
+**Minutes**
+(tba)
+
 
 ## 26/Feb/2025
 _Meeting minutes: Cat_
