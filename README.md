@@ -73,9 +73,9 @@ _Meeting minutes: Sherrill_
 
 **Agenda (written Feb 17):**
 - Informal meeting to get our bearings!
-      - Updated qiime results?
-      - Update on truncation lengths from Evelyn?
-      - Any further clarifications and planning on proposal ***(due Sun, Feb 23)***
+  - Updated qiime results?
+  - Update on truncation lengths from Evelyn?
+  - Any further clarifications and planning on proposal ***(due Sun, Feb 23)***
 
 **Minutes**
 (tba)
