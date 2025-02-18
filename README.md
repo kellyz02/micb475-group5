@@ -55,8 +55,15 @@ _Meeting minutes: Jeyah_
 
 ## 12/Feb/2025
 _Meeting minutes: Emilie_
-**Preliminary agenda (written 11/2/2025):** 
- - Quiime 2 data processing underway. Demux file has been created and there are ongoing disucssions being held about truncation length.  
+**Preliminary agenda + Meeting notes (written 11/2/2025):** 
+ - Quiime 2 data processing underway. Demux file has been created and there are ongoing disucssions being held about truncation length.
+        - having issues with the truncation length- changed to 235 because a lot of samples were lost at 173. Number of samples is 91 which isn't a lot
+        - looks like a lot of samples have reads that aren't good
+        - most primates got filtered out
+        - Lots of samples have significantly longer reads with drop in quality at the end
+        - could still work, less accurate but if we need to choose between samples vs quality, should keep as many samples as possible
+        - try no truncation to ensure that all samples are retained
+        - Previous groups truncated at 150 and they retained 98%?
  - Proposal planning underway with the following assingments: 
       - Introduction and Background: Emilie (and Jeyah) 
       - Research Objective: Jeyah (and Emilie) 
@@ -65,7 +72,57 @@ _Meeting minutes: Emilie_
       - Dataset overview: Catherine  
       - Timeline (Gantt Chart): Jeyah
       - Participation report: Everyone 
-- Phyloseq script will be created, and everyone will pick different metadata objects to explore further. Analysis and metrics will be run (by saturday) and results will be discussed on team meeting scheduled next tuesday. 
+- Phyloseq script will be created, and everyone will pick different metadata objects to explore further. Analysis and metrics will be run (by saturday) and results will be discussed on team meeting scheduled next tuesday.
+      - can always merge figures for final manuscript 
+- withing the same order, some captive and some wild- at different zoos and different santuaries. Do we still want to compare within zoos- otherwise we need to control for other features
+- previous paper looked at geography and diet --> confirm that climate is different enough from geography
+      - our results could also be different then the previous paper since they truncated and lost many samples
+- use the Koppen Climate Classification which we will assign based on metadata temperature and precipitation columns
+       - A: Tropical climates, where all months have average temperatures above 18°C
+       - B: Dry climates, where there is deficient precipitation for most of the year
+       - C: Temperate climates with mild winters
+       - D: Continental climates with cold winters
+       - E: Polar climates, found in the Arctic and Antarctic
+  - we can also take into consideration the city and location of zoo and use that in our classification
+       - we can subset our data based on the climate catagory
+- Are we still looking at captivity?
+       - is wild vs captive independent from climate status? If combined- number of sampels will drop
+       - if not significantly different then we will group them together
+- Consider that other papers have truncated significantly and thus lost a lot of samples. Since we have decided to not truncate, we could reproduce their code and get different results
+
+Research Question: Does climate influence microbiome of different classes of annimals? Does this differ between wild and captive animals (i.e. is it captivity specific)? 
+       - if we find a significant different in types of bacteria in certain climate- we could do a functional analysis- does the bacteria order/class affect the micrbiota in a climate repsonse 
+- We will need to do metadata wrangling:
+      - add climate status column, have 5 catagories (removing all that columns that we don't need- can even remoce temperature and precipitation once climate classification is added)
+      -  Might be easier to change metadata and add climate, get rid of everything else that we don’t need, then go and generate table .qza and .qzv → denoising step outputs the table so need to repeat the denoising step
+      - Will we do the indicator test (only does pairwise comparison)
+Workflow: 
+ - Classify each based on climate 
+ - Within a climate, look at the microbiomes
+ - Compare microbiomes of same class between climates 
+ - Within a climate, look at different
+
+Action:
+- jeyah (and kelly) will do the metadata. Phyloseq is pushed back as it is not needed for proposal
+- meeting on tuesday 8am (attended by Bessie) to discuss qiime results and proposal items
+- Bessie will contact evelyn about truncation lengths
+- Jeyah and catherine will switch proposal sections
+
+Rubric tips
+- title shouldn't be broad or too conclusive
+- be specific about climate status
+- background and intro: define all key terms, research needs to be cited but don't force a knowledge gap
+- hyptoehsis: provide a prediction- what do we think will happen, find previous literature (ie wetter climate = increased diversity)
+- experimental aims:e very specific, talk about what we are doing and WHY and how it relates to the question 
+- Don’t forget to reference qiime and package
+- Don't want us to repeat steps: When describing diversity analysis we don’t need to say we did qiime if we said alread
+- Mention what files we are using 
+- Keep the read length, depth, sample size, justify truncation, primers, rareifaction
+Confirm which style works (ASM) 
+
+
+
+
 
 
 ## 18/Feb/2025 (note: meeting by request)
