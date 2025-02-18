@@ -68,8 +68,10 @@ _Meeting minutes: Emilie_
 - Phyloseq script will be created, and everyone will pick different metadata objects to explore further. Analysis and metrics will be run (by saturday) and results will be discussed on team meeting scheduled next tuesday. 
 
 
-## 19/Feb/2025 (note: meeting by request)
+## 18/Feb/2025 (note: meeting by request)
 _Meeting minutes: Sherrill_
+*Agenda (written Feb 17):*
+- 
 
 ## 26/Feb/2025
 _Meeting minutes: Cat_
