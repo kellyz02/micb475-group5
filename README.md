@@ -147,6 +147,7 @@ _Meeting minutes: Sherrill_
 - ***Temperature issue***: temperatures are in the 100s (˚C)
   - France in particular gets very low (~4.8) or very high (~200+)
   - Can try to search for mean temperatures for each place of that year, and use that information instead
+
 Proposal:
 - Introduction: no set number of sources, just as long as things are sufficiently clear/defined
 
