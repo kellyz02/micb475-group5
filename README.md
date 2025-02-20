@@ -141,6 +141,7 @@ _Meeting minutes: Sherrill_
 - Truncation length: a lot of samples aren’t too good in this metadata
   - Relatively long truncation length (~200) still has bad quality → still filtered
   - 150 should be fine for our purposes to keep as many decent samples as we can, though it’s not ideal
+    - ***we will also truncate at 150***
 - Koppen classification can have subcategories, smaller letters (e.g., certain amount of precipitation) → can maybe stratify just in case, but we might not have enough data for significant enough comparisons between more niche subcategories
   - If we need to do research to define the main 5 categories, then we can do research if we need to further define subcategories
   - If there is enough info in metadata for main 5, then just stick to main 5
