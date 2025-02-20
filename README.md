@@ -135,7 +135,27 @@ _Meeting minutes: Sherrill_
   - Any further clarifications and planning on proposal ***(due Sun, Feb 23)***
 
 **Minutes**
-(tba)
+- **One of the servers doesn’t grant permissions to upload?
+  - tmp → temporary files, might be something wrong with this folder that is not producing intermediate files
+  - Be sure to remove chloroplast + mitochondrial sequences → might help
+- Truncation length: a lot of samples aren’t too good in this metadata
+  - Relatively long truncation length (~200) still has bad quality → still filtered
+  - 150 should be fine for our purposes to keep as many decent samples as we can, though it’s not ideal
+- Koppen classification can have subcategories, smaller letters (e.g., certain amount of precipitation) → can maybe stratify just in case, but we might not have enough data for significant enough comparisons between more niche subcategories
+  - If we need to do research to define the main 5 categories, then we can do research if we need to further define subcategories
+  - If there is enough info in metadata for main 5, then just stick to main 5
+- ***Temperature issue***: temperatures are in the 100s (˚C)
+  - France in particular gets very low (~4.8) or very high (~200+)
+  - Can try to search for mean temperatures for each place of that year, and use that information instead
+Proposal:
+- Introduction: no set number of sources, just as long as things are sufficiently clear/defined
+
+*To-Do*:
+- Trying rarefaction again
+- Bessie will check on the temperature issue (asking authors directly not ideal)
+  - If we can’t find info… we can do our own research on temperature
+
+
 
 
 ## 26/Feb/2025
