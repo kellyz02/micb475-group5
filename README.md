@@ -163,6 +163,32 @@ Proposal:
 ## 26/Feb/2025
 _Meeting minutes: Cat_
 
+**Agenda/Minutes:**
+- Bessie updates
+  - Proposal graded by Hans, not Bessie
+  - Agreed to use map to assign climate categories
+
+- Proposal & project
+  - Do alpha and beta diversity analyses directly in R so that we can do stats right away
+  - DESeq2 (tells us sig ASVs) is not necessary since we are mainly looking at the effect of climate change → not necessary to do
+      - Bessie can write us a script to automate
+  - 4 x 6 DESeq analyses = 9ish/person
+  - Total 6 animal orders, 4 (out of 5 total) climate categories
+  - Can only look at climate differences if captivity status for an order is not significant
+  - Make a discussion after aim 1 before moving on to aim 2, to frame what we will be doing in the next steps
+
+- Go over weekly to-do list (make more detailed)
+  - See MICB 475: Meeting Minutes Schedule, Timeline, To do
+  - Split up 6 orders between ourselves - 1 person writes alpha div code, 1 person writes beta diversity code
+  - Next week, split up Aim 2 based on our findings
+
+- Peer-feedback survey?
+  - Very informal, just to make sure everyone contributes to writing and analysis
+
+- Lab notebook format (Github)
+  - Store everything in Github (all files, incl. Intermediate files & script)
+  - To upload bash code - text file with commands
+
 ## 05/Mar/2025
 _Meeting minutes: Kelly_
 
