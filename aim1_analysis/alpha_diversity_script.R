@@ -10,8 +10,8 @@ order_name <- "Cetartiodactyla"
 
 # 0. Import phyloseq_file object and save as "phyloseq")
 # (make sure the RData object is downloaded in your current directory)
-# CHANGE HERE: setwd("/Users/kellyzhang/Documents/UBC/MICB475/project_2/micb475-group5")
-load("phyloseq_file.RData")
+setwd("/Users/kellyzhang/Documents/UBC/MICB475/project_2/micb475-group5")
+load("preprocessing/phyloseq_file.RData")
 phyloseq <- phyloseq_file
 
 # 1. Select order of interest
@@ -21,12 +21,14 @@ phyloseq_order <- subset_samples(phyloseq_file, Taxonomy_Order == order_name)
 shannon <- estimate_richness(phyloseq_order, measures = c("Shannon"))
 sample_data(phyloseq_order)$Shannon <- shannon$Shannon
 
-# 2. SHANNON DIVERSITY: generate dotplot of richness + evenness of samples
+# 2. SHANNON DIVERSITY: generate boxplot of richness + evenness of samples
 gg_richness <- plot_richness(phyloseq_order, x = "captive_wild", measures = c("Shannon")) +
   ggtitle(paste("Shannon Diversity of Captive and Wild", order_name, "Samples")) +
-  xlab("Sample ID") +
+  xlab("Captivity Status") +
   ylab("Shannon Diversity") +
-  geom_boxplot()
+  geom_boxplot() + 
+  theme(axis.text.x = element_text(angle = 0, hjust=0.5))
+  
 gg_richness
 
 ggsave(filename = "plot_richness.png"
@@ -45,7 +47,7 @@ sample_data(phyloseq_order)$PD <- phylo_dist$PD
 plot.pd <- ggplot(sample_data(phyloseq_order), aes(captive_wild, PD)) + 
   geom_boxplot() +
   ggtitle(paste("Faith's Phylogenetic Diversity of Captive and Wild", order_name, "Samples")) +
-  xlab("Sample ID") +
+  xlab("Captivity Status") +
   ylab("Phylogenetic Diversity")
 
 # view plot
@@ -64,15 +66,24 @@ wilcox_pd <- wilcox.test(PD ~ captive_wild, data = samp_dat_df, exact = FALSE)
 
 #=======================================================================
 #### Add Statistical Results to Boxplots ######
-gg_richness + 
+final_shannon_plot <- gg_richness + 
   geom_signif(comparisons = list(c("captive", "wild")), 
               annotations = paste("p =", format(wilcox_shannon$p.value, digits = 6)),  
               y_position = 6.5,
               tip_length = 0.03)
 
-plot.pd + 
+final_pd_plot <- plot.pd + 
   geom_signif(comparisons = list(c("captive", "wild")), 
               annotations = paste("p =", format(wilcox_pd$p.value, digits = 6)),  
               y_position = 102,
               tip_length = 0.03)
+
+#### Output plots ######
+ggsave(paste0("alpha_shannon_", order_name, "_boxplot.png"),
+       final_shannon_plot,
+       height=4, width=6.5)
+
+ggsave(paste0("alpha_pd_", order_name, "_boxplot.png"),
+       final_pd_plot,
+       height=4, width=6.5)
 
