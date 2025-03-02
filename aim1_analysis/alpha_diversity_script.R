@@ -8,13 +8,12 @@ library(tidyverse)
 library(picante)
 library(ggsignif)
 
-## CHANGE HERE: to run on different orders, please just replace the value of this variable:
-order_name <- "Cetartiodactyla"
+## To run, please replace with the order name as specified in the metadata.
+order_name <- "<INSERT YOUR ORDER, e.g. Cetartiodactyla"
 
 # 0. Import phyloseq_file object and save as "phyloseq")
-# (make sure the RData object is downloaded in your current directory)
-setwd("/Users/kellyzhang/Documents/UBC/MICB475/project_2/micb475-group5")
-load("preprocessing/phyloseq_file.RData")
+setwd("<INSERT YOUR WORKING DIRECTORY, IF NEEDED>")
+load("<INSERT PATH TO PHYLOSEQ>/phyloseq_file.RData")
 phyloseq <- phyloseq_file
 
 # 1. Select order of interest
