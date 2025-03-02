@@ -1,5 +1,8 @@
 #### Alpha Diversity ######
 
+if (!requireNamespace("picante", quietly = TRUE)) install.packages("picante")
+if (!requireNamespace("ggsignif", quietly = TRUE)) install.packages("ggsignif")
+
 library(phyloseq)
 library(tidyverse)
 library(picante)
