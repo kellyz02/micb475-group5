@@ -192,6 +192,26 @@ _Meeting minutes: Cat_
 ## 05/Mar/2025
 _Meeting minutes: Kelly_
 
+#### Part 1: Proposal Revision
+___Reflections + Feedback:___
+- Adjusting + refining our aims to be more specific (i.e. breaking them down?)
+- Adjusting our approach to be more specific, and get rid of Aim 1 differential + functional analysis
+- Ensure consistency between all the sections to avoid reader confusion 
+
+___Fixes:___
+
+
+#### Part 2: Analyzing Alpha + Beta Analysis
+___Interpreting our results:___
+- Shannon Diversity, significant results:
+  - Primates
+- Faith's PD, significant results:
+  - Tubulidentata
+  - Pilosa
+ 
+___Conclusions + Moving Forward:___
+
+
 ## 12/Mar/2025
 _Meeting minutes: Jeyah_
 
