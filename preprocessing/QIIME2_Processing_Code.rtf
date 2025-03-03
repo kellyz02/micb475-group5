@@ -1,0 +1,121 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Bold;\f1\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww25100\viewh26880\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\b\fs24 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 # import and demultiplex\
+
+\f1\b0 qiime tools import \\\
+  --type "SampleData[SequencesWithQuality]" \\\
+  --input-format SingleEndFastqManifestPhred33V2 \\\
+  --input-path /mnt/datasets/project_2/zoo/zoo_manifest.txt \\\
+  --output-path demux_seqs.qza\
+
+\f0\b \
+# create visualization of demultiplexed samples\
+
+\f1\b0 qiime demux summarize \\\
+  --i-data demux_seqs.qza \\\
+  --o-visualization demux.qzv
+\f0\b \
+  \
+# denoising steps\
+
+\f1\b0 screen -S denoise\
+\
+qiime dada2 denoise-single \\\
+  --i-demultiplexed-seqs demux_seqs.qza \\\
+  --p-trim-left 0 \\\
+  --p-trunc-len 150 \\\
+  --o-representative-sequences rep-seqs.qza \\\
+  --o-table table.qza \\\
+  --o-denoising-stats stats.qza\
+\
+qiime feature-table summarize \\\
+	--i-table table.qza \\\
+	--o-visualization table.qzv \\\
+	--m-sample-metadata-file /mnt/datasets/project_2/zoo/zoo_metadata.txt\
+	\
+qiime feature-table tabulate-seqs \\\
+	--i-data rep-seqs.qza \\\
+	--o-visualization rep-seqs.qzv
+\f0\b \
+	\
+# re-train the classifier\
+
+\f1\b0 qiime feature-classifier extract-reads \\\
+  --i-sequences /mnt/datasets/silva_ref_files/silva-138-99-seqs.qza \\\
+  --p-f-primer GTGCCAGCMGCCGCGGTAA \\\
+  --p-r-primer GGACTACHVGGGTWTCTAAT \\\
+  --p-trunc-len 150 \\\
+  --o-reads ref-seqs-trimmed.qza\
+\
+qiime feature-classifier fit-classifier-naive-bayes \\\
+  --i-reference-reads ref-seqs-trimmed.qza \\\
+  --i-reference-taxonomy /mnt/datasets/silva_ref_files/silva-138-99-tax.qza \\\
+  --o-classifier classifier.qza\
+  \
+qiime feature-classifier classify-sklearn \\\
+  --i-classifier classifier.qza \\\
+  --i-reads rep-seqs.qza \\\
+  --o-classification taxonomy.qza
+\f0\b \
+  \
+# make trees for phylogenetic analyses\
+
+\f1\b0 qiime phylogeny align-to-tree-mafft-fasttree \\\
+--i-sequences rep-seqs.qza \\\
+--o-alignment aligned-rep-seqs.qza \\\
+--o-masked-alignment masked-aligned-rep-seqs.qza \\\
+--o-tree unrooted-tree.qza \\\
+--o-rooted-tree rooted-tree.qza
+\f0\b \
+\
+# transfer to local computer\
+
+\f1\b0 qiime tools export \\\
+--input-path ../zoo_project/table.qza \\\
+--output-path table_export \
+\
+biom convert \\\
+-i feature-table.biom \\\
+--to-tsv \\\
+-o feature-table.txt\
+\
+qiime tools export \\\
+--input-path ../zoo_project/taxonomy.qza \\\
+--output-path taxonomy_export \
+\
+qiime tools export \\\
+--input-path ../zoo_project/rooted-tree.qza \\\
+--output-path rooted_tree_export \
+
+\f0\b \
+# remove chloroplast + mitochondria\
+
+\f1\b0 qiime taxa filter-table \\\
+  --i-table table.qza \\\
+  --i-taxonomy taxonomy.qza \\\
+  --p-exclude mitochondria,chloroplast \\\
+  --o-filtered-table table-no-mitochondria-no-chloroplast.qza\
+\
+qiime feature-table summarize \\\
+	--i-table table-no-mitochondria-no-chloroplast.qza \\\
+	--o-visualization new-table-no-mitochondria-no-chloroplast.qzv \\\
+	--m-sample-metadata-file zoo_metadata_edited.txt
+\f0\b \
+	\
+# rarefaction\
+
+\f1\b0 qiime diversity alpha-rarefaction \\\
+--i-table table-no-mitochondria-no-chloroplast.qza \\\
+--i-phylogeny rooted-tree.qza \\\
+--p-max-depth 200000 \\\
+--m-metadata-file zoo_metadata_edited.txt \\\
+--o-visualization alpha-rarefaction.qzv
+\f0\b \
+}
