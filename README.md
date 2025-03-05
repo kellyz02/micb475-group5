@@ -191,27 +191,96 @@ _Meeting minutes: Cat_
 ## 05/Mar/2025
 _Meeting minutes: Kelly_
 
-#### Part 1: Proposal Revision
+#### **Part 1: Proposal Revision**
 ___Reflections + Feedback:___
 - Adjusting + refining our aims to be more specific (i.e. breaking them down?)
 - Adjusting our approach to be more specific, and get rid of Aim 1 differential + functional analysis
 - Ensure consistency between all the sections to avoid reader confusion
+- **General Notes:**
+    - We should list out every single possible scenario because it is an exploratory analysis, make it more clear that it is exploratory. 
+    - General Confusions: 
+        - how we’re classifying climate
+        - what exact analysis we’re doing
+            - there’s a million comparison groups, so we should refine what analysis we want to prioritize 
+- **Introduction Notes:**
+    - Need more traditional elements
+    - Refine research question 
+    - Not enough information about WHY we want to study this context (effect of climate status on gut microbiome), why is it important to study gut microbiome in general about these animals (i.e. instead of their immune cell composition) 
+        - Can we modify their microbiome? 
+        - Can we prevent disease in their microbiome? 
+    - Effect of climate on the gut microbiome:
+        - What are the known mechanisms that climate can impact the gut microbiome (independent/dependent on diet) (although probably will end up talking about diet, because climate is highly intertwined as it impacts the availability of food) 
+            - research gap: because the relationship between climate and the gut microbiome is understudied, we suspect that the relationship between gut microbiome and diet means that there will be an effect by climate too. 
+    - Don’t mention the hypothesis in the introduction 
+    - *Potential motivating question we want to make sure we address: If diet was the main contributor here, why did we decide to use climate? Because for wild animals it’s hard to determine their diet composition, so we want to use climate as an indicator.*
+    - General order/flow of intro: 
+        - gut microbiome impact on animals 
+            - 1 major factor of gut microbiome is diet
+        - BUT diet not always known, especially in wild, so climate could act as a good indicator (proxy)
+            - **make sure to spend several sentences on this: climate acting as a predictor of diet (connect the gap between climate → diet → gut microbiome)**
+            - give examples of how it does: e.g. rain may cause prey to be less present, are hunting behaviours different based on climate, how is vegetation impacted by climate? 
+            - *make sure to really address the question of why we’re doing climate instead of diet, refrain from strengthening diet too much *
+        - BUT there is a research gap: the relationship between climate + gut microbiome is understudied so we want to investigate this. 
+        - Tying it into captivity: There is a difference in diet between wild and captivity, so it is a variable that we want to make sure we explore the impact of this too 
+        - In this project, we aim to use this data to answer these following questions…  
+    - Referencing UJEMI papers: a lot of them were irrelevant to our research question, were only similar because of the dataset → is it okay if we just use the most relevant one, and not bring up the others? 
+        - If they compared wild vs. captivity status, it could be useful to still reference 
+    - We could either keep the dataset introduction in the intro or we could move it to dataset overview 
+- **Experimental Aims:**
+    - Currently we have 2 aims, but let’s separate them into more aims 
+    - Aim 1: For each order of animal,  Compare alpha + beta diversity between the 4 different climate statuses across the 6 different animal orders (box plot) 
+    - Move climate status to beginning step: 
+    - **Aim 1:** For each order of animal, compare alpha and beta diversity across the 4 different climate statuses, and compare taxa barplots for each climate in order 
+        - easier to explain that there is no difference between the climate status groups because of the wild + captivity status, so better to do climate first and then do wild + captivity status 
+        - **alpha diversity**: e.g. boxplots for each order, where climate A, B, C, D are grouped, and use wilcox test (OR if its just 2 climates represented, then you’ll have to adjust the test to whatever is more than pairwise categorical)
+        - **beta diversity**: PCoA plot + PERMANOVA 
+        - because of shannon + faith PD look at different metrics -> significantly different in phylogenetic but not shannon, then they must have similar evenness but the species are phylogenetical distant from each other  
+        - **taxa barplot**: even if alpha diversity may not be different, do we see a different representation of taxa (especially because the animals are similar to each other) -> across climate in each order 
+            * preview to our indicator taxa + core microbiome analysis in Aim 2! 
+    - **Aim 2**: Because (likely) that climate didn’t have an impact on diversity, then we want to see the impact of wild + captivity between the climate statuses using alpha and beta diversity boxplots, indicator taxa analysis, and core microbiome analysis 
+        - **boxplot**: 2 boxplots for captive and wild, for each climate status in one plot. (e.g. 8 boxplots (if all the climate statuses are represented across each order))
+        - within group + across group comparison: do 2-WAY ANOVA. 
+        - if they different within one climate status, that means captivity has an effect here 
+        - *is the effect of captivity is bigger wild (compared to captive animals) animals -> compare wild animals ACROSS all the climate statuses, compare captive animals ACROSS all climate statuses*
+        - ***we need to make sure we have wild and captive status animals for each climate IN EACH ORDER.  → and if we don’t have that then, we throw away that climate group, for that order.***
+        - **not necessary to do taxa barplot, will do indicator taxxa + core microbiome**
+    - **Possible scenario 1:**
+        - For each order of animal, we have 5 different climate statuses (and compare diversity between climates)
+            - say we don’t see a significant difference
+        - However, once we divide by captivity + wild, and say we do see a significant difference, then captivity + wild is a main indicator here. 
+    - **Aim 3: Core Micorbiome + Indicator Taxa + DIFFERENTIAL  analysis for ANY SIGNIFICANT GROUPS**
+    - **AIM 4: FUNCTIONAL ANALYSIS**
 
-___Fixes:___
+*Fixes:*
+- **Action Item:** Make a table, how many animals in this order and climate, how many are wild and captive so we know which groups will need to be eliminated from our analysis 
+    - order on x axis
+    - climate on y axis 
 - Add tool citations (Kelly)
 - Remove differential expression + functional analysis from Aim 1 approach (Kelly)
 
 
-#### Part 2: Analyzing Alpha + Beta Analysis
-___Interpreting our results:___
-- Shannon Diversity, significant results:
-  - Primates
-- Faith's PD, significant results:
-  - Tubulidentata
-  - Pilosa
- 
-___Conclusions + Moving Forward:___
+#### **Part 2: Analyzing Alpha + Beta Analysis**
 
+**Interpreting our results:**
+- Shannon Diversity, significant results: captivity has an impact, regardless of climate status 
+    - Primates
+- Faith's PD, significant results: captivity has an impact, regardless of climate status
+    - Tubulidentata
+    - Pilosa
+- wild animals from different climates clustered with each other → is there perhaps a similarity between these climates? 
+- If animals have a similar gut microbiome in both captivity and wild, then that means that living in climate X means that it ensures that ideal diets are fulfilled, regardless of captivity status. 
+
+## TO-DO LIST FOR NEXT WEEK:
+- **Get draft changes to Bessie by Saturday NIGHT, so she has Sunday to look for it:**
+  - Introduction edits: Emilie + Jeyah
+  - Hypothesis + Question (if needed?): Cat
+  - Aim edits: Sherill + Kelly
+  - Approach edits: Kelly 
+  - Citation edits: Kelly
+  - GANTT chart edits: Jeyah
+- Change the alpha diversity script + generate alpha diversity plots for Aim 1: Kelly (by next meeting)
+- Create taxa barplot script - Jeyah (by next meeting)
+- Create table of groups - Cat (by next meeting)
 
 ## 12/Mar/2025
 _Meeting minutes: Jeyah_
