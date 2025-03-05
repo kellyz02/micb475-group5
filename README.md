@@ -1,4 +1,5 @@
 # MICB475-Group5-Agenda & Meeting Minutes
+## [To-Do & Timeline Google Doc] (https://docs.google.com/document/d/1c9SF45MHagotgmzhL_JCIoF1-3Ngr-G65ER-98RIpRM/edit?usp=sharing)
 ## 05/Feb/2025
 _Meeting minutes: Jeyah_
 
@@ -196,9 +197,11 @@ _Meeting minutes: Kelly_
 ___Reflections + Feedback:___
 - Adjusting + refining our aims to be more specific (i.e. breaking them down?)
 - Adjusting our approach to be more specific, and get rid of Aim 1 differential + functional analysis
-- Ensure consistency between all the sections to avoid reader confusion 
+- Ensure consistency between all the sections to avoid reader confusion
 
 ___Fixes:___
+- Add tool citations (Kelly)
+- Remove differential expression + functional analysis from Aim 1 approach (Kelly)
 
 
 #### Part 2: Analyzing Alpha + Beta Analysis
