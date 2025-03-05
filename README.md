@@ -1,5 +1,6 @@
 # MICB475-Group5-Agenda & Meeting Minutes
 ### [To-Do & Timeline Google Doc](https://docs.google.com/document/d/1c9SF45MHagotgmzhL_JCIoF1-3Ngr-G65ER-98RIpRM/edit?usp=sharing)
+### [Meeting Minutes Google Doc](https://docs.google.com/document/d/1gqU68g0OVO--qMp_WRkoWx3UNo-8WKKD1EjoDAbvpfA/edit?usp=sharing) 
 
 ## 05/Feb/2025
 _Meeting minutes: Jeyah_
