@@ -1,5 +1,6 @@
 # MICB475-Group5-Agenda & Meeting Minutes
-## [To-Do & Timeline Google Doc] (https://docs.google.com/document/d/1c9SF45MHagotgmzhL_JCIoF1-3Ngr-G65ER-98RIpRM/edit?usp=sharing)
+### [To-Do & Timeline Google Doc](https://docs.google.com/document/d/1c9SF45MHagotgmzhL_JCIoF1-3Ngr-G65ER-98RIpRM/edit?usp=sharing)
+---
 ## 05/Feb/2025
 _Meeting minutes: Jeyah_
 
@@ -52,8 +53,7 @@ _Meeting minutes: Jeyah_
 - Read through proposal documents on Canvas (everyone)
 - Have an idea for proposal outline (everyone)
 
-
-
+---
 ## 12/Feb/2025
 _Meeting minutes: Emilie_
 **Preliminary agenda + Meeting notes (written 11/2/2025):** 
@@ -122,10 +122,7 @@ Rubric tips
 Confirm which style works (ASM) 
 
 
-
-
-
-
+---
 ## 18/Feb/2025 (note: meeting by request)
 _Meeting minutes: Sherrill_
 
@@ -159,8 +156,7 @@ Proposal:
   - If we can’t find info… we can do our own research on temperature
 
 
-
-
+---
 ## 26/Feb/2025
 _Meeting minutes: Cat_
 
@@ -190,6 +186,7 @@ _Meeting minutes: Cat_
   - Store everything in Github (all files, incl. Intermediate files & script)
   - To upload bash code - text file with commands
 
+---
 ## 05/Mar/2025
 _Meeting minutes: Kelly_
 
