@@ -2,11 +2,39 @@ library(ggplot2)
 library(phyloseq)
 
 # load in phyloseq object
-load("~/Desktop/micb475_r/PROJECT/phyloseq_file.RData")
+load("../preprocessing/phyloseq_file.RData")
 phyloseq <- phyloseq_file
 
 # extract metadata from phyloseq object
 metadata <- as(sample_data(phyloseq), "data.frame")
+
+# Create table
+
+# Get all combinations of Order, Climate, and Captivity
+all_combinations <- expand.grid(
+  Taxonomy_Order = unique(metadata$Taxonomy_Order),
+  Climate..basic. = unique(metadata$Climate..basic.),
+  captive_wild = unique(metadata$captive_wild)
+)
+
+# Count occurrences, ensuring all combinations are included
+summary_table <- metadata %>%
+  count(Taxonomy_Order, Climate..basic., captive_wild) %>%
+  full_join(all_combinations, by = c("Taxonomy_Order", "Climate..basic.", "captive_wild")) %>%
+  mutate(n = replace_na(n, 0)) %>%  # Fill missing counts with 0
+  pivot_wider(
+    names_from = c(Climate..basic., captive_wild),
+    values_from = n,
+    values_fill = list(n = 0)
+  ) %>%
+  arrange(Taxonomy_Order)  # Sort rows by Order
+
+summary_table <- summary_table %>%
+  select(Taxonomy_Order, sort(colnames(.)))
+
+write.csv(summary_table, "captivity_climate_animal_counts.csv", row.names = FALSE)
+
+
 
 # create bar plot counting the number of captive and wild animals are present in each order and climate group
 gg_overview <- ggplot(metadata, aes(x = Taxonomy_Order, fill = captive_wild)) +
