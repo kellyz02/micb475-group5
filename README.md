@@ -285,6 +285,25 @@ ___Reflections + Feedback:___
 ## 12/Mar/2025
 _Meeting minutes: Jeyah_
 
+### Discussion 
+
+**Alpha Diversity Plots** 
+- Look through the new plots Kelly generated as a team!
+
+**Taxa Bar Plots** 
+- Look through the taxa bar plot Jeyah generated
+- Used phylum as the taxonomic rank but can discuss potentially using something else
+
+**Next Steps** 
+- Aim 2
+  - Alpha and beta diversity + statistical analysis focusing on captivity
+- Aim 3
+  - Perform taxonomic analysis on significant groups from Aim 1 and 2
+-> Think it might be a good idea to work on aims 1 and 2 this week?
+- Aim 4
+  - Perform functional analysis on significant groups
+
+
 ## 19/Mar/2025
 _Meeting minutes: Emilie_
 
