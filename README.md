@@ -299,6 +299,7 @@ _Meeting minutes: Jeyah_
   - Alpha and beta diversity + statistical analysis focusing on captivity
 - Aim 3
   - Perform taxonomic analysis on significant groups from Aim 1 and 2
+
 -> Think it might be a good idea to work on aims 1 and 2 this week?
 - Aim 4
   - Perform functional analysis on significant groups
