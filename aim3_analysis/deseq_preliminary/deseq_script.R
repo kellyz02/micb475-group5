@@ -110,3 +110,30 @@ ggsave(filename = "pilosa_captivity_deseq.png", vol_pilo_capt)
 
 ggsave(filename = "primate_climate_deseq.png", vol_prim_clim)
 ggsave(filename = "primate_captivity_deseq.png", vol_prim_capt)
+
+
+### Pulling Significant ASVs ###
+tubuclim_sigASVs <- res_tubu_clim %>% 
+  filter(padj<0.01 & abs(log2FoldChange)>2) %>%
+  dplyr::rename(ASV=row)
+tubucapt_sigASVs <- res_tubu_capt %>% 
+  filter(padj<0.01 & abs(log2FoldChange)>2) %>%
+  dplyr::rename(ASV=row)
+# captivity had more ASVs of significance
+
+piloclim_sigASVs <- res_pilo_clim %>% 
+  filter(padj<0.01 & abs(log2FoldChange)>2) %>%
+  dplyr::rename(ASV=row)
+pilocapt_sigASVs <- res_pilo_capt %>% 
+  filter(padj<0.01 & abs(log2FoldChange)>2) %>%
+  dplyr::rename(ASV=row)
+# comparable; climate had slightly more ASVs of significance
+
+primclim_sigASVs <- res_prim_clim %>% 
+  filter(padj<0.01 & abs(log2FoldChange)>2) %>%
+  dplyr::rename(ASV=row)
+primcapt_sigASVs <- res_prim_capt %>% 
+  filter(padj<0.01 & abs(log2FoldChange)>2) %>%
+  dplyr::rename(ASV=row)
+# captivity had more ASVs of significance
+
