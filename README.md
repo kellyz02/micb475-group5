@@ -300,13 +300,29 @@ _Meeting minutes: Jeyah_
 - Aim 3
   - Perform taxonomic analysis on significant groups from Aim 1 and 2
 
--> Think it might be a good idea to work on aims 1 and 2 this week?
+-> Think it might be a good idea to work on aims 2 and 3 this week?
 - Aim 4
   - Perform functional analysis on significant groups
 
 
 ## 19/Mar/2025
 _Meeting minutes: Emilie_
+**Agenda** 
+ - Update on the Taxa bar blot (i.e. colour separation)- questions for Bessie
+ - Discussion on aim 1: look at the graphs produced by Jeyah and Kelly
+     - Jaccard
+     - Unifrac
+     - Weighted Unifrac
+     - PCOA
+         - Were dot overlays fixed?
+ - Discussion of aim 2: Kelly’s alpha diversity analysis 
+     - Permanova analysis 
+     - Permanova summarization table from Cat
+ - Discussion of aim 3: Emilie Has many questions on CM and IT
+     - Core microbiome 
+     - Indicator Taxa 
+     - DEseq 
+
 
 ## 26/Mar/2025
 _Meeting minutes: Sherrill_
