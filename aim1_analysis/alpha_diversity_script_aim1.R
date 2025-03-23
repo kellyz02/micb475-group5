@@ -11,12 +11,13 @@ library(picante)
 library(ggsignif)
 
 ## To run, please replace with the order name as specified in the metadata.
-order_name <- "Tubulidentata"
+order_name <- "Cetartiodactyla"
 
 # 0. Import phyloseq_file object and save as "phyloseq")
 setwd("~/Documents/UBC/MICB475/project_2/micb475-group5/aim1_analysis")
 load("../preprocessing/phyloseq_file.RData")
 phyloseq <- phyloseq_file
+
 
 # 1. Select order of interest
 phyloseq_order <- subset_samples(phyloseq_file, Taxonomy_Order == order_name)
@@ -33,7 +34,7 @@ gg_richness <- plot_richness(phyloseq_order, x = "Climate..basic.", measures = c
   ylab("Shannon Diversity") +
   geom_boxplot() + 
   theme(axis.text.x = element_text(angle = 0, hjust=0.5))
-  
+
 gg_richness
 
 ggsave(filename = "plot_richness.png"
@@ -62,16 +63,29 @@ plot.pd
 #### Statistical Analysis: Wilcoxon Rank Test (non-parametric, significance of diversity differences) ######
 samp_dat <- sample_data(phyloseq_order)
 samp_dat_df <- data.frame(samp_dat)
+# Subset the data for wild and captive groups
+wild_data <- samp_dat_df[samp_dat_df$captive_wild == "wild", ]
+captive_data <- samp_dat_df[samp_dat_df$captive_wild == "captive", ]
 
 num_climates <- length(unique(samp_dat_df$Climate..basic.))
 
 comparisons <- combn(unique(samp_dat_df$Climate..basic.), 2, simplify = FALSE)
 
 if (num_climates == 2) {
-  # Wilcox: Shannon Diversity
-  wilcox_shannon <- wilcox.test(Shannon ~ Climate..basic., data = samp_dat_df, exact = FALSE)
-  # Wilcox: Faith's PD
-  wilcox_pd <- wilcox.test(PD ~ Climate..basic., data = samp_dat_df, exact = FALSE)
+  # Kruskal-Wallis test for Faith's Phylogenetic Diversity in the wild group
+  kruskal_wild_pd <- kruskal.test(PD ~ Climate..basic., data = wild_data)
+  
+  # Kruskal-Wallis test for Faith's Phylogenetic Diversity in the captive group
+  kruskal_captive_pd <- kruskal.test(PD ~ Climate..basic., data = captive_data)
+  
+  # WILD: Wilcox: Shannon Diversity
+  wilcox_wild_shannon <- wilcox.test(Shannon ~ Climate..basic., data = wild_data, exact = FALSE)
+  # WILD: Wilcox: Faith's PD
+  wilcox_wild_pd <- wilcox.test(PD ~ Climate..basic., data = wild_data, exact = FALSE)
+  # CAPTIVE: Wilcox: Shannon Diversity
+  wilcox_captive_shannon <- wilcox.test(Shannon ~ Climate..basic., data = captive_data, exact = FALSE)
+  # CAPTIVE: Wilcox: Faith's PD
+  wilcox_captive_pd <- wilcox.test(PD ~ Climate..basic., data = captive_data, exact = FALSE)
   
   p_value_shannon <- wilcox_shannon$p.value
   p_value_pd <- wilcox_pd$p.value
@@ -97,12 +111,13 @@ if (num_climates == 2) {
   p_value_pd <- kruskal_pd$p.value
   
   # Dunn's test for pairwise comparisons (post-hoc analysis)
-  dunn_shannon <- dunnTest(Shannon ~ Climate..basic., data = samp_dat_df, method = "bonferroni")
-  dunn_pd <- dunnTest(PD ~ Climate..basic., data = samp_dat_df, method = "bonferroni")
+  dunn_shannon <- dunnTest(Shannon ~ Climate..basic., data = samp_dat_df, method = "bh")
+  dunn_pd <- dunnTest(PD ~ Climate..basic., data = samp_dat_df, method = "bh")
   
   # Extract pairwise p-values for plotting
   pairwise_p_values_shannon <- dunn_shannon$res$P.adj
   pairwise_p_values_pd <- dunn_pd$res$P.adj
+  pairwise_p_values_pd
   
   # Get max values for y-axis positioning
   max_shannon <- max(samp_dat_df$Shannon, na.rm = TRUE)
