@@ -56,7 +56,7 @@ phy_tree(phyloseq_file)
 
 
 rarecurve(t(as.data.frame(otu_table(phyloseq_file))), cex=0.1)
-phyloseq_rare <- rarefy_even_depth(phyloseq_file, rngseed = 1, sample.size = 1000)
+phyloseq_rare <- rarefy_even_depth(phyloseq_file, rngseed = 1, sample.size = 38348)
 
 
 save(phyloseq_file, file="phyloseq_file.RData")
