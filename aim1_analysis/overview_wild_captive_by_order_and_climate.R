@@ -2,8 +2,8 @@ library(ggplot2)
 library(phyloseq)
 
 # load in phyloseq object
-load("../preprocessing/phyloseq_file.RData")
-phyloseq <- phyloseq_file
+load("../preprocessing/phyloseq_rare.RData")
+phyloseq <- phyloseq_rare
 
 # extract metadata from phyloseq object
 metadata <- as(sample_data(phyloseq), "data.frame")
