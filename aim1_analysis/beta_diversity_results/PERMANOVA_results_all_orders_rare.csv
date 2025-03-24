@@ -1,0 +1,15 @@
+Order,Factor,R2,P_value
+Carnivora,Climate..basic.,0.236410829,0.134
+Carnivora,captive_wild,0.763589171,NA
+Carnivora,Climate..basic.:captive_wild,1,NA
+Cetartiodactyla,Climate..basic.,0.088412936,0.001
+Cetartiodactyla,captive_wild,0.911587064,NA
+Cetartiodactyla,Climate..basic.:captive_wild,1,NA
+Perissodactyla,Climate..basic.,0.094938741,0.001
+Perissodactyla,captive_wild,0.905061259,NA
+Perissodactyla,Climate..basic.:captive_wild,1,NA
+Pilosa,Climate..basic.,0.313416426,0.066666667
+Primates,Climate..basic.,0.159341601,0.001
+Primates,captive_wild,0.126085343,0.001
+Primates,Climate..basic.:captive_wild,0.714573056,NA
+Tubulidentata,captive_wild,0.442884943,0.008
