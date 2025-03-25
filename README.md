@@ -327,6 +327,15 @@ _Meeting minutes: Emilie_
 ## 26/Mar/2025
 _Meeting minutes: Sherrill_
 
+**Agenda (written Mar 25):**
+- PERMANOVA issue resolved!
+- Clarification on animal/bacterial order:
+  - Results and plots are looking at bacterial taxa (not looking at taxonomic relationships between the animal orders)
+- Aim 3 analyses (core microbiome, indicator species, DESeq)
+  - Note: unrarefied phyloseq seems to be okay for all three analyses
+  - (examples from Module 16 used the unrarefied mpt_final instead of the rarefied mpt_rare object)
+- Presentation discussion: how would we like to proceed and structure it?
+
 ## 02/Apr/2025
 _Meeting minutes: Cat_
 
