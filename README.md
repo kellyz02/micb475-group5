@@ -355,7 +355,7 @@ _Meeting minutes: Emilie_
  - *DESeq can only run pairwise comparison → need to know which climates are significantly different as well for interpretable climate volcano plot*
  - Jeyah: make picrust 2 script + run 
  - Aim to have complete results ready to show Bessie on Wednesday. 
- - Run Core-Mb use rarified, for ISA use 
+ - Run Core-Mb use rarified, for ISA use regular phyloseq
 
 
 
