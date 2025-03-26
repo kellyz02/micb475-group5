@@ -372,6 +372,34 @@ _Meeting minutes: Sherrill_
 - Presentation discussion: how would we like to proceed and structure it?
   - Slides due _**Mar 30**_
   - We present Team 6's slides on _**Apr 3**_
+ 
+**Minutes**:
+- Make overview table for alpha diversity results → still meaningful to show that there was no significance here, but also to streamline the data
+  - Overall p-value rather than pairwise p-values
+  - For each order, climates available
+- Make an overall table with rarefied data (results)
+  - Non-rarefied table into methods
+- Data is at least reproducible (primates)
+  - Previous studies largely focused on primates due to its larger sample size
+  - Novel: perissodactyla and cetartiodactyla in climate
+- Differences in richness and abundance
+- Combine all the permanova beta diversity tables together
+  - Up to 4 decimal points
+  - Colour code: by significance → each cell is a different colour
+  - Raw table (excel)
+- Narrow down to those with more obvious clustering?
+  - Cetartiodactyla might be interesting
+  - Primates in climate + captivity (temperate-specific?)
+- BC beta-diversity: bring back ellipses (Evelyn says its okay that they are made with the assumption about normalized data)
+- Core microbiome: look at non-rarefied data (code takes into account rarefaction)
+  - Four-way venn diagram based on climate for primates (ignore captivity here)
+    - See what’s unique to climate
+- ISA: too much significance <3
+- Piecrust: yes go ahead, filter out based on +/- 3 certain fold-change
+  - If there are still too many pathways, we can can be more stringent and cut out to +/- 5 fold-change
+  - If there are only a few pathways (5-10) then we can include the fig in the manuscript
+
+
 
 ## 02/Apr/2025
 _Meeting minutes: Cat_
