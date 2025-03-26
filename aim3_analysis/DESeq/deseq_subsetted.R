@@ -23,10 +23,13 @@ primate_phylo <- subset_samples(phylo_plus1,
                                 Taxonomy_Order == "Primates") %>%
   subset_samples(Climate..basic. != "B") %>%
   subset_samples(Climate..basic. != "D")
-certartiodactyla_phylo <- subset_samples(phylo_plus1,
+cetartiodactyla_phylo <- subset_samples(phylo_plus1,
                                          Taxonomy_Order == "Cetartiodactyla")
 perissodactyla_phylo <- subset_samples(phylo_plus1,
                                        Taxonomy_Order == "Perissodactyla") %>%
+  subset_samples(Climate..basic. != "D")
+carnivora_phylo <- subset_samples(phylo_plus1,
+                                  Taxonomy_Order == "Carnivora") %>%
   subset_samples(Climate..basic. != "D")
 
 
@@ -43,10 +46,13 @@ prim_clim <- phyloseq_to_deseq2(primate_phylo, ~`Climate..basic.`)
 prim_capt <- phyloseq_to_deseq2(primate_phylo, ~`captive_wild`)
 
 # arid and temperate
-cert <- phyloseq_to_deseq2(certartiodactyla_phylo, ~`Climate..basic.`)
+cet <- phyloseq_to_deseq2(cetartiodactyla_phylo, ~`Climate..basic.`)
 
 # arid and temperate
 peri <- phyloseq_to_deseq2(perissodactyla_phylo, ~`Climate..basic.`)
+
+# arid and temperate
+carn <- phyloseq_to_deseq2(carnivora_phylo, ~`Climate..basic.`)
 
 
 ###
@@ -58,9 +64,11 @@ deseq_pilo <- DESeq(pilo)
 deseq_prim_clim <- DESeq(prim_clim)
 deseq_prim_capt <- DESeq(prim_capt)
 
-deseq_cert <- DESeq(cert)
+deseq_cet <- DESeq(cet)
 
 deseq_peri <- DESeq(peri)
+
+deseq_carn <- DESeq(carn)
 
 # Results tables
 # note to self: reference set as earliest in alphabetical order if undefined
@@ -74,10 +82,13 @@ res_prim_clim <- results(deseq_prim_clim, tidy = TRUE)
 res_prim_capt <- results(deseq_prim_capt, tidy = TRUE)
 # reference climate: A (tropical)
 
-res_cert <- results(deseq_cert, tidy = TRUE)
+res_cet <- results(deseq_cet, tidy = TRUE)
 # reference climate: B (arid)
 
 res_peri <- results(deseq_peri, tidy = TRUE)
+# reference climate: B (arid)
+
+res_carn <- results(deseq_carn, tidy = TRUE)
 # reference climate: B (arid)
 
 ### Volcano plots ###
@@ -107,12 +118,12 @@ vol_prim_capt <- res_prim_capt %>%
   geom_point(aes(x=log2FoldChange, y=-log10(padj), col=significant)) +
   labs(title = "Differential Expression of Primates (Captive vs. Wild)")
 
-# certartiodactyla
-vol_cert <- res_cert %>%
+# cetartiodactyla
+vol_cet <- res_cet %>%
   mutate(significant = padj<0.01 & abs(log2FoldChange)>2) %>%
   ggplot() +
   geom_point(aes(x=log2FoldChange, y=-log10(padj), col=significant)) +
-  labs(title = "Differential Expression of Certartiodactyla (Arid and Temperate)")
+  labs(title = "Differential Expression of Cetartiodactyla (Arid and Temperate)")
 
 # perissodactyla
 vol_peri <- res_peri %>%
@@ -120,6 +131,13 @@ vol_peri <- res_peri %>%
   ggplot() +
   geom_point(aes(x=log2FoldChange, y=-log10(padj), col=significant)) +
   labs(title = "Differential Expression of Perissodactyla (Arid and Temperate)")
+
+# carnivora
+vol_carn <- res_carn %>%
+  mutate(significant = padj<0.01 & abs(log2FoldChange)>2) %>%
+  ggplot() +
+  geom_point(aes(x=log2FoldChange, y=-log10(padj), col=significant)) +
+  labs(title = "Differential Expression of Carnivora (Arid and Temperate)")
 
 ### File Saves ###
 ggsave(filename = "tubulidentata_captivity_deseq.png", vol_tubu)
@@ -129,9 +147,11 @@ ggsave(filename = "pilosa_climate_deseq.png", vol_pilo)
 ggsave(filename = "primate_climate_deseq.png", vol_prim_clim)
 ggsave(filename = "primate_captivity_deseq.png", vol_prim_capt)
 
-ggsave(filename = "certartiodactyla_climate_deseq.png", vol_cert)
+ggsave(filename = "cetartiodactyla_climate_deseq.png", vol_cet)
 
 ggsave(filename = "perissodactyla_climate_deseq.png", vol_peri)
+
+ggsave(filename = "carnivora_climate_deseq.png", vol_carn)
 
 
 ### Pulling Significant ASVs ###
@@ -151,7 +171,7 @@ primcapt_sigASVs <- res_prim_capt %>%
   dplyr::rename(ASV=row)
 # captivity had more ASVs of significance
 
-cert_sigASVs <- res_cert %>%
+cet_sigASVs <- res_cet %>%
   filter(padj<0.01 & abs(log2FoldChange)>2) %>%
   dplyr::rename(ASV=row)
 
