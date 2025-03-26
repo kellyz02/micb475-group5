@@ -321,11 +321,57 @@ _Meeting minutes: Emilie_
  - Discussion of aim 3: Emilie Has many questions on CM and IT
      - Core microbiome 
      - Indicator Taxa 
-     - DEseq 
+     - DEseq
+  
+  ##Meeting Minutes ##
+  
+ - Presentations: April 1-3. Get group assignment 2 days before, be graded on presenting the other team and how good we make our slides. 
+ - Just need the general idea of the other teams project 
+
+ - Kelly having trouble with significance bars: Bessie says add right to the figure 
+
+ - Discussion on aim 1: need to re-run on the rarefied phylsoseq. For the rarifying step in R, where do we put the value 
+ - Sampling depth = change, 1000 is really low so don’t use default 
+ - Change that number to 38348 
+ - After this, redo all the alpha, beta, core microbiome, DEseq but not Indicator species 
+
+ - Permanova looks wrong: comparing climate status and captivity, instead of orders seen, we should seen climate status, captivity, climate status*captivity, and R score. Should have R score for each category and combined. 
+ - To make the data frame, used Chat to export permanova results 
+ - Should be climate, captivity status to see if separation is statistically significant
+ - Have to run the permanova code everytime, for each order you would have that table. More efficient to have R tabulate data, but better to do manually
+ - Using VH for stats 
+ - Rename the folder with the old alpha diversity results: archived alpha diversity. 
+ - When Permanova run, given sum of R>2, and p value (one p value for entire PCOA plot). In summary you should see independent variables going into it 
+ - Ie how many differences is climate accounting form, vs captivity status accounting for.
+
+
+ - finish new phyloseq rarefied by Friday night
+ - finish alpha + beta diversity analysis by Saturday 8 PM
+ - Saturday 8 PM: meeting to discuss next steps for aim 3 + 4
+ - Saturday night: send email to bessie of our conclusions
+ - Sunday: receive confirmation from bessie
+ - Sunday-Tuesday: 
+ - proceed with core microbiome, indicator taxa, deseq2 run
+ - *DESeq can only run pairwise comparison → need to know which climates are significantly different as well for interpretable climate volcano plot*
+ - Jeyah: make picrust 2 script + run 
+ - Aim to have complete results ready to show Bessie on Wednesday. 
+ - Run Core-Mb use rarified, for ISA use regular phyloseq
+
 
 
 ## 26/Mar/2025
 _Meeting minutes: Sherrill_
+
+**Agenda (written Mar 25):**
+- PERMANOVA issue resolved!
+- Clarification on animal/bacterial order:
+  - Results and plots are looking at bacterial taxa (not looking at taxonomic relationships between the animal orders)
+- Aim 3 analyses (core microbiome, indicator species, DESeq)
+  - Note: unrarefied phyloseq seems to be okay for all three analyses
+  - (examples from Module 16 used the unrarefied mpt_final instead of the rarefied mpt_rare object)
+- Presentation discussion: how would we like to proceed and structure it?
+  - Slides due _**Mar 30**_
+  - We present Team 6's slides on _**Apr 3**_
 
 ## 02/Apr/2025
 _Meeting minutes: Cat_
