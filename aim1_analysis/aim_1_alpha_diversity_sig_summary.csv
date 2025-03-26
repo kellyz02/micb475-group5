@@ -1,0 +1,7 @@
+order,climates,faith_pd_p_value,shannon_p_value
+Carnivora,BCD,0.711,0.5308
+Cetartiodactyla,BC,0.0841,0.4323
+Perissodactyla,BCD,0.9958,0.9657
+Pilosa,CD,0.4875,0.817
+Primates,ABCD,0.9937,0.5795
+Tubulidentata,B,NA,NA
