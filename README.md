@@ -335,6 +335,8 @@ _Meeting minutes: Sherrill_
   - Note: unrarefied phyloseq seems to be okay for all three analyses
   - (examples from Module 16 used the unrarefied mpt_final instead of the rarefied mpt_rare object)
 - Presentation discussion: how would we like to proceed and structure it?
+  - Slides due _**Mar 30**_
+  - We present Team 6's slides on _**Apr 3**_
 
 ## 02/Apr/2025
 _Meeting minutes: Cat_
