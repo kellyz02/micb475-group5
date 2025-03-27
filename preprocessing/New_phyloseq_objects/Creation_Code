@@ -1,0 +1,67 @@
+library(phyloseq)
+library(ape) 
+library(tidyverse)
+library(vegan)
+
+metafp <- "zoo_metadata_edited.tsv"
+meta <- read_delim(metafp, delim="\t")
+
+otufp <- "feature-table.txt"
+otu <- read_delim(file = otufp, delim="\t", skip=1)
+
+taxfp <- "taxonomy.tsv"
+tax <- read_delim(taxfp, delim="\t")
+
+phylotreefp <- "tree.nwk"
+phylotree <- read.tree(phylotreefp)
+
+otu_mat <- as.matrix(otu[,-1])
+rownames(otu_mat) <- otu$`#OTU ID`
+OTU <- otu_table(otu_mat, taxa_are_rows = TRUE) 
+class(OTU)
+
+samp_df <- as.data.frame(meta[,-1])
+rownames(samp_df)<- meta$'#SampleID'
+SAMP <- sample_data(samp_df)
+class(SAMP)
+
+
+tax_mat <- tax %>% select(-Confidence)%>%
+  separate(col=Taxon, sep="; "
+           , into = c("Domain","Phylum","Class","Order","Family","Genus","Species")) %>%
+  as.matrix() 
+tax_mat <- tax_mat[,-1]
+rownames(tax_mat) <- tax$`Feature ID`
+TAX <- tax_table(tax_mat)
+class(TAX)
+
+#Troubleshooting:
+sample_names(OTU)
+rownames(SAMP)
+#tip names were did not match the sample names in the OTU table. 
+class(phylotree)
+str(phylotree)
+all(phylotree$tip.label %in% rownames(OTU))
+phylotree$tip.label <- rownames(OTU)[match(phylotree$tip.label, rownames(OTU))]
+head(phylotree$tip.label)
+
+#phyloseq object
+phyloseq_file <- phyloseq(OTU, SAMP, TAX, phylotree)
+
+otu_table(phyloseq_file)
+sample_data(phyloseq_file)
+tax_table(phyloseq_file)
+phy_tree(phyloseq_file)
+
+phylsoseq_filtered <- subset_taxa(phyloseq_file,  Domain == "d__Bacteria" & Class!="c__Chloroplast" & Family !="f__Mitochondria")
+phylsoseq_filtered_nolow <- filter_taxa(phylsoseq_filtered, function(x) sum(x)>5, prune = TRUE)
+phyloseq_final <- prune_samples(sample_sums(phylsoseq_filtered_nolow)>100, phylsoseq_filtered_nolow)
+
+
+rarecurve(t(as.data.frame(otu_table(phyloseq_final))), cex=0.1)
+phyloseq_rare <- rarefy_even_depth(phyloseq_final, rngseed = 1, sample.size = 38348)
+
+
+save(phyloseq_final, file="phyloseq_final.RData")
+save(phyloseq_rare, file="phyloseq_rare.RData")
+
