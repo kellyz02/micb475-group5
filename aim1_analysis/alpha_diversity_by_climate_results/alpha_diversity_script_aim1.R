@@ -11,11 +11,11 @@ library(picante)
 library(ggsignif)
 
 ## To run, please replace with the order name as specified in the metadata.
-order_name <- "Pilosa"
+order_name <- "Tubulidentata"
 
 # 0. Import phyloseq_file object and save as "phyloseq")
 setwd("~/Documents/UBC/MICB475/project_2/micb475-group5/aim1_analysis")
-load("../preprocessing/phyloseq_rare.RData")
+load("../preprocessing/New_phyloseq_objects/phyloseq_rare.RData")
 phyloseq <- phyloseq_rare
 
 # 1. Select order of interest

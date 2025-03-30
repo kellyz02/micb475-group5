@@ -1,7 +1,7 @@
-"Taxonomy_Order","A_captive","A_wild","B_captive","B_wild","C_captive","C_wild","D_captive","D_wild","Total"
-"Carnivora",0,0,0,6,5,0,1,0,12
-"Cetartiodactyla",0,0,0,16,23,0,0,0,39
-"Perissodactyla",0,0,0,8,24,0,3,0,35
-"Pilosa",0,0,0,0,4,0,2,0,6
-"Primates",0,10,0,2,21,8,4,0,45
-"Tubulidentata",0,0,4,5,0,0,0,0,9
+"Taxonomy_Order","A_captive","A_wild","B_captive","B_wild","C_captive","C_wild","D_captive","D_wild"
+"Carnivora",0,0,0,6,5,0,1,0
+"Cetartiodactyla",0,0,0,16,23,0,0,0
+"Perissodactyla",0,0,0,8,24,0,3,0
+"Pilosa",0,0,0,0,4,0,2,0
+"Primates",0,9,0,2,21,8,4,0
+"Tubulidentata",0,0,4,5,0,0,0,0
