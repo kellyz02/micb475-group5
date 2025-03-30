@@ -1,7 +1,7 @@
-order,num_samples,climates,faith_pd_p_value,shannon_p_value
-Carnivora,12,BCD,0.711,0.5308
-Cetartiodactyla,39,BC,0.0841,0.4323
-Perissodactyla,35,BCD,0.9958,0.9657
-Pilosa,6,CD,0.4875,0.817
-Primates,45,ABCD,0.9937,0.5795
-Tubulidentata,9,B,NA,NA
+order,num_samples,climates,stat_test,faith_pd_p_value,shannon_p_value
+Carnivora,12,"Arid,Temperate,Cold",Kruskal-Wallis,0.319491,0.530819
+Cetartiodactyla,39,"Arid,Temperate",Wilcoxon,0.113049,0.466567
+Perissodactyla,35,"Arid,Temperate,Cold",Kruskal-Wallis,0.85815,0.965682
+Pilosa,6,"Temperate,Cold",Wilcoxon,0.487453,0.816961
+Primates,44,"Tropical,Arid,Temperate,Cold,Polar",Kruskal-Wallis,0.0103741,0.598981
+Tubulidentata,9,Arid,NA,NA,NA
