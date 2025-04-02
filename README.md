@@ -409,6 +409,7 @@ _Meeting minutes: Cat_
 - Delegate manuscript writing
 
 **Minutes**
+
 *Picrust2: Log2foldchange (>-2, <2)*
 - Captivity promotes superpathway of methanogenesis, which is generally downregulated in temperate climates
   - May connect to global warming and livestock (maybe they are fed a diet more closely to livestock)
