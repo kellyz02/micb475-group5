@@ -403,11 +403,83 @@ _Meeting minutes: Sherrill_
 
 ## 02/Apr/2025
 _Meeting minutes: Cat_
+
 **Agenda (Written April 01)**
 - Discussion about picrust2 data (pca plots & log2foldchange graphs)
 - Delegate manuscript writing
 
 **Minutes**
+*Picrust2: Log2foldchange (>-2, <2)*
+- Captivity promotes superpathway of methanogenesis, which is generally downregulated in temperate climates
+  - May connect to global warming and livestock (maybe they are fed a diet more closely to livestock)
+- Everything shown is significant
+- Include captive v wild as a figure by itself
+- Create a graph for only overlapping pathways between climates (compared to temperate)
+- Include all in supplemental (need to reference in main manuscript body)
+- Idea: create graph for pathways only related to digestion → easy to connect back to intro and how climate as proxy for food availability
+- Include 3 panels with temperate into one fig
+
+*Picrust2: PCA*
+- Not as meaningful, does not add anything that isn't in the log2foldchange graphs
+- Show captivity plot with bar plot
+- Poor representation on plot axes is a limitation but not a problem → it is the best that we can do, bring up in limitation section
+
+*Manuscript:*
+- Follow the checklist!!! - rubric was made off of the checklist
+- Do not bring up new data in discussion
+- Bessie will not review chunks of our draft but can review whole figures.
+- Title: include most important finding 
+  - Instead of “shapes” - be more specific
+  - Remove Köppen-geiger
+- Intro: format is different, need to tweak based on our findings → a bit more toward primates
+
+Figure 5: captive v. wild (panel A = pca, panel B = bar plot)
+Figure 6: 3 panels with pca plots specific to temperate climate
+
+Limitations:
+- Lack of representation of animal orders across all climates and captivity status → could not explore all data
+- Classification of temperature, based on certain assumptions
+- Focus on confounding variables (diet was not controlled for, heavily influences diet)
+
+Division of labor:
+Title: 
+1. Abstract: Sherrill
+2. Intro: Emilie
+3. Methods: everyone write up a section on what they worked on
+4. Results: everyone write up a section on what they worked on
+5. Discussion: everyone write up a section on what they worked on
+  a) Cat - all of beta-div
+  b) Jeyah - picrust
+  c) Sherrill - contextualizing w/ broader literature
+6. Limitations: Jeyah, Cat
+7. Future directions: Kelly
+
+**Have parts finished by Friday
+**We all review each other’s sections by Sunday
+** Due Sun, April 13th
+
+*Presentation division*
+- Title (1) - Kelly
+- Intro (2-3) - Kelly
+- RQ + Aims/Hyp (4-5) - Emilie
+- Dataset + Aim 1(6-) - Cat
+- Alpha div (8) - Kelly
+- Beta div (9-10) - Cat
+- Core microbiome (11) - 
+- Aim 2 + pathways (12-16)
+- Aims and takeaways (17)
+- Limitations + future direction + acknowledgements (18-20)
+
+- Emilie: Aims & Hypothesis, core microbiome, aim 2
+  - 4, 5, 11, 12
+- Cat: Beta div,  dataset
+  - 6, 7, 9, 10
+- Kelly: Intro, Alpha Diversity 
+  - 1, 2, 3, 8
+- Sherrill: takeaways, limitations, future directions, acknowledgements
+  - 17, 18, 19, 20
+- Jeyah: picrust
+  - 13, 14, 15, 16
 
 ## 09/Apr/2025 (note: meeting by request)
 _Meeting minutes: Kelly_
