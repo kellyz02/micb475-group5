@@ -403,6 +403,11 @@ _Meeting minutes: Sherrill_
 
 ## 02/Apr/2025
 _Meeting minutes: Cat_
+**Agenda (Written April 01)**
+- Discussion about picrust2 data (pca plots & log2foldchange graphs)
+- Delegate manuscript writing
+
+**Minutes**
 
 ## 09/Apr/2025 (note: meeting by request)
 _Meeting minutes: Kelly_
