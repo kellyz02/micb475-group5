@@ -11,7 +11,7 @@ library(picante)
 library(ggsignif)
 
 ## To run, please replace with the order name as specified in the metadata.
-order_name <- "Tubulidentata"
+order_name <- "Primates"
 
 # 0. Import phyloseq_file object and save as "phyloseq")
 setwd("~/Documents/UBC/MICB475/project_2/micb475-group5/aim1_analysis")

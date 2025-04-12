@@ -2,7 +2,7 @@ library(ggplot2)
 library(phyloseq)
 
 # load in phyloseq object
-load("../preprocessing/phyloseq_rare.RData")
+load("../preprocessing/New_phyloseq_objects/phyloseq_rare.RData")
 phyloseq <- phyloseq_rare
 
 # extract metadata from phyloseq object
@@ -27,6 +27,7 @@ summary_table <- metadata %>%
     values_from = n,
     values_fill = list(n = 0)
   ) %>%
+  mutate(Total = rowSums(select(., -Taxonomy_Order))) %>%  # Add total column
   arrange(Taxonomy_Order)  # Sort rows by Order
 
 summary_table <- summary_table %>%
