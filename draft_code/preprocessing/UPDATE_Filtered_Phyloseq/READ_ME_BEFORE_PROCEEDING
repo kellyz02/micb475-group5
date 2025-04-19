@@ -1,0 +1,4 @@
+## READ ME BEFORE PROCEEDING## 
+ - after it was determined that using the code from lecture was insufficient to remove the chloroplast ASVs from our sample, I additionally
+removed them at the genus level. Before rarifying I checked that no chloroplast or mitochondrial DNA was left. 
+ - New Rarified and regular phyloseq file are good, but please review code before your own analysis. Code will be in this folder.

@@ -1,9 +1,0 @@
-##Updated Phyloseq files as of Mar 27 2025##
- - the following code was run on the original phyloseq object to filter out chloroplasts and mitochondrial and also remove bad reads. 
-
-phylsoseq_filtered <- subset_taxa(phyloseq_file,  Domain == "d__Bacteria" & Class!="c__Chloroplast" & Family !="f__Mitochondria")
-phylsoseq_filtered_nolow <- filter_taxa(phylsoseq_filtered, function(x) sum(x)>5, prune = TRUE)
-phyloseq_final <- prune_samples(sample_sums(phylsoseq_filtered_nolow)>100, phylsoseq_filtered_nolow)
-
-#As per group discussion on whatsapp chat, data was not filtered based on NAs. 
-

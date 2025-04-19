@@ -1,0 +1,218 @@
+library(tidyverse)
+library(phyloseq)
+library(indicspecies)
+
+load("phyloseq_final.RData")
+
+phyloseq_primates <- subset_samples(phyloseq_final, Taxonomy_Order == "Primates") 
+
+##Indicator Species Analysis Primate Climate##
+
+phyloseq_primate_All_climate <- tax_glom(phyloseq_primates, "Genus", NArm = FALSE) 
+phyloseq_All_Climate_RA<- transform_sample_counts(phyloseq_primate_All_climate, fun=function(x) x/sum(x))
+
+isa_all_climate <- multipatt(t(otu_table(phyloseq_All_Climate_RA)), cluster = sample_data(phyloseq_All_Climate_RA)$`Climate..basic.`)
+summary(isa_all_climate)
+taxtable <- tax_table(phyloseq_final) %>% as.data.frame() %>% rownames_to_column(var="ASV")
+
+Isa_all_climate_table<- isa_all_climate$sign %>%
+  rownames_to_column(var="ASV") %>%
+  left_join(taxtable) %>%
+  filter(p.value<0.05) %>%
+  filter(stat>0.8)
+  
+##This section is for histogram formatting, proceed to important code after this#
+phylum_df_A$Phylum <- gsub("^p__", "", phylum_df_A$Phylum)
+phylum_df_B$Phylum <- gsub("^p__", "", phylum_df_B$Phylum)
+phylum_df_C$Phylum <- gsub("^p__", "", phylum_df_C$Phylum)
+phylum_df_D$Phylum <- gsub("^p__", "", phylum_df_D$Phylum)
+
+library(RColorBrewer)
+phylum_list <- c(
+  "Campilobacterota",
+  "Firmicutes",
+  "Proteobacteria",
+  "Bacteroidota",
+  "Actinobacteriota",
+  "Fibrobacterota",
+  "Synergistota",
+  "Verrucomicrobiota",
+  "Planctomycetota")
+
+phylum_colors <- brewer.pal(9, "Set1")
+phylum_colors <- setNames(phylum_colors, phylum_list)
+
+##End of Formatting##
+
+##Filtering climate A##
+Isa_all_climate_table_A <- Isa_all_climate_table %>%
+  filter(s.A>0)
+print (Isa_all_climate_table_A$Phylum)
+
+phylum_vector_A <- Isa_all_climate_table_A$Phylum
+phylum_counts_A <- table(phylum_vector_A)
+phylum_df_A <- as.data.frame(phylum_counts_A)
+colnames(phylum_df_A) <- c("Phylum", "Count")
+
+Histogram_A <- ggplot(phylum_df_A, aes(x = Phylum, y = Count, fill = Phylum)) +
+  geom_bar(stat = "identity") +
+  labs(
+    x = "Phylum",
+    y = "Count",
+    title = "Significant Phylum for Tropical Climates") +
+  theme_minimal() +
+  scale_fill_manual(values = phylum_colors) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1)) +
+  theme(legend.position = "none")
+Histogram_A
+
+
+#Filtering for CLimate B##
+Isa_all_climate_table_B <- Isa_all_climate_table %>%
+  filter(s.B>0)
+print(Isa_all_climate_table_B$Phylum)
+
+
+phylum_vector_B <- Isa_all_climate_table_B$Phylum
+phylum_counts_B <- table(phylum_vector_B)
+phylum_df_B <- as.data.frame(phylum_counts_B)
+colnames(phylum_df_B) <- c("Phylum", "Count")
+
+
+Histogram_B <- ggplot(phylum_df_B, aes(x = Phylum, y = Count, fill = Phylum)) +
+  geom_bar(stat = "identity") +
+  labs(
+    x = "Phylum",
+    y = "Count",
+    title = "Histogram of Phylum Counts for Arid Climates") +
+  theme_minimal() +
+  scale_fill_manual(values = phylum_colors) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1)) +
+  theme(legend.position = "none")
+Histogram_B
+
+
+##Filtering for Climate C##
+Isa_all_climate_table_C <- Isa_all_climate_table %>%
+  filter(s.C>0)
+print(Isa_all_climate_table_C$Phylum)
+
+phylum_vector_C <- Isa_all_climate_table_C$Phylum
+phylum_counts_C <- table(phylum_vector_C)
+phylum_df_C <- as.data.frame(phylum_counts_C)
+colnames(phylum_df_C) <- c("Phylum", "Count")
+
+Histogram_C <- ggplot(phylum_df_C, aes(x = Phylum, y = Count, fill = Phylum)) +
+  geom_bar(stat = "identity") +
+  labs(
+    x = "Phylum",
+    y = "Count",
+    title = "Histogram of Phylum Counts for Temperate Climates") +
+  theme_minimal() +
+  scale_fill_manual(values = phylum_colors) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1)) +
+  theme(legend.position = "none")
+Histogram_C
+
+##Filtering for Climate D###
+Isa_all_climate_table_D <- Isa_all_climate_table %>%
+  filter(s.D>0)
+print(Isa_all_climate_table_D$Phylum)
+
+phylum_vector_D <- Isa_all_climate_table_D$Phylum
+phylum_counts_D <- table(phylum_vector_D)
+phylum_df_D <- as.data.frame(phylum_counts_D)
+colnames(phylum_df_D) <- c("Phylum", "Count")
+
+Histogram_D <- ggplot(phylum_df_D, aes(x = Phylum, y = Count, fill = Phylum)) +
+  geom_bar(stat = "identity") +
+  labs(
+    x = "Phylum",
+    y = "Count",
+    title = "Histogram of Phylum Counts for Continental Climates") +
+  theme_minimal() +
+  scale_fill_manual(values = phylum_colors) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1)) +
+  theme(legend.position = "none")
+Histogram_D
+
+ggsave("Histogram_A.png", Histogram_A)
+ggsave("Histogram_B.png", Histogram_B)
+ggsave("Histogram_C.png", Histogram_C)
+ggsave("Histogram_D.png", Histogram_D)
+
+
+
+
+##ISA on just climate C for wild vs captive##
+phyloseq_primates_Climate_C<- subset_samples(phyloseq_primates, Climate..basic. == "C") 
+
+phyloseq_climate_C_primates_glommed <- tax_glom(phyloseq_primates_Climate_C, "Genus", NArm = FALSE) 
+phyloseq_C_Climate_RA<- transform_sample_counts(phyloseq_climate_C_primates_glommed, fun=function(x) x/sum(x))
+
+isa_C_wildcaptive <- multipatt(t(otu_table(phyloseq_C_Climate_RA)), cluster = sample_data(phyloseq_C_Climate_RA)$`captive_wild`)
+summary(isa_C_wildcaptive)
+taxtable <- tax_table(phyloseq_final) %>% as.data.frame() %>% rownames_to_column(var="ASV")
+
+isa_C_wildcaptive_table<- isa_C_wildcaptive$sign %>%
+  rownames_to_column(var="ASV") %>%
+  left_join(taxtable) %>%
+  filter(p.value<0.05) %>%
+  filter(stat>0.8)
+
+
+
+##This section is for histogram formatting, proceed to important code after this#
+phylum_captive$Phylum <- gsub("^p__", "", phylum_captive$Phylum)
+phylum_wild$Phylum <- gsub("^p__", "", phylum_wild$Phylum)
+
+##End of Formatting##
+
+Isa_captive_C <-isa_C_wildcaptive_table %>%
+  filter(s.captive>0)
+print(Isa_captive_C$Phylum)
+
+phylum_vector_captive <-Isa_captive_C$Phylum
+phylum_counts_captive <- table(phylum_vector_captive)
+phylum_captive <- as.data.frame(phylum_counts_captive)
+colnames(phylum_captive) <- c("Phylum", "Count")
+
+Histogram_captive <- ggplot(phylum_captive, aes(x = Phylum, y = Count, fill = Phylum)) +
+  geom_bar(stat = "identity") +
+  labs(
+    x = "Phylum",
+    y = "Count",
+    title = "Histogram of Phylum Counts Captive Animals In Temperate Climate") +
+  theme_minimal() +
+  scale_fill_manual(values = phylum_colors) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1)) +
+  theme(legend.position = "none")
+Histogram_captive
+
+
+Isa_wild_C <-isa_C_wildcaptive_table %>%
+  filter(s.wild>0)
+print(Isa_captive_C$Phylum)
+
+
+phylum_vector_wild <-Isa_wild_C$Phylum
+phylum_counts_wild <- table(phylum_vector_wild)
+phylum_wild <- as.data.frame(phylum_counts_wild)
+colnames(phylum_wild) <- c("Phylum", "Count")
+
+
+Histogram_wild <- ggplot(phylum_wild, aes(x = Phylum, y = Count, fill = Phylum)) +
+  geom_bar(stat = "identity") +
+  labs(
+    x = "Phylum",
+    y = "Count",
+    title = "Histogram of Phylum Counts Wild Animals In Temperate Climate") +
+  theme_minimal() +
+  scale_fill_manual(values = phylum_colors) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1)) +
+  theme(legend.position = "none")
+Histogram_wild
+
+ggsave("Histogram_captive.png", Histogram_captive)
+ggsave("Histogram_wild.png", Histogram_wild)
+
