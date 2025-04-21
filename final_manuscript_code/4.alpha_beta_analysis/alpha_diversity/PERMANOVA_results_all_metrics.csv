@@ -1,0 +1,24 @@
+,,bray_curtis,,jaccard,,unifrac,,weighted_unifrac,
+Order,Factor,R2,P_value,R2,P_value,R2,P_value,R2,P_value
+Carnivora,Climate,0.235750319,0.12,0.275207912,0.034,0.298399642,0.017,0.253247079,0.126
+Carnivora,Captivity_status,0.764249681,NA,0.724792088,NA,0.701600358,NA,0.746752921,NA
+Carnivora,Climate:Captivity_status,1,NA,1,NA,1,NA,1,NA
+Cetartiodactyla,Climate,0.089064559,0.001,0.077306343,0.001,0.079808942,0.001,0.087245925,0.001
+Cetartiodactyla,Captivity_status,0.910935441,NA,0.922693657,NA,0.920191058,NA,0.912754075,NA
+Cetartiodactyla,Climate:Captivity_status,1,NA,1,NA,1,NA,1,NA
+Perissodactyla,Climate,0.094955115,0.005,0.104263126,0.001,0.100856031,0.002,0.097666267,0.005
+Perissodactyla,Captivity_status,0.905044885,NA,0.895736874,NA,0.899143969,NA,0.902333733,NA
+Perissodactyla,Climate:Captivity_status,1,NA,1,NA,1,NA,1,NA
+Pilosa,Climate,0.312739669,0.066666667,0.306609248,0.066666667,0.30861274,0.066666667,0.349246576,0.066666667
+Primates,Climate,0.16961136,0.001,0.175269454,0.001,0.173324809,0.001,0.140424215,0.001
+Primates,Captivity_status,0.134573948,0.001,0.135300711,0.001,0.131264446,0.001,0.104499842,0.001
+Primates,Climate:Captivity_status,0.695814692,NA,0.689429835,NA,0.695410745,NA,0.755075942,NA
+Tubulidentata,Captivity_status,0.443517674,0.015,0.388285989,0.01,0.358930904,0.011,0.415655154,0.011
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+,,,,, ,,,,
