@@ -35,16 +35,6 @@ rownames(tax_mat) <- tax$`Feature ID`
 TAX <- tax_table(tax_mat)
 class(TAX)
 
-#Troubleshooting:
-sample_names(OTU)
-rownames(SAMP)
-#tip names were did not match the sample names in the OTU table. 
-class(phylotree)
-str(phylotree)
-all(phylotree$tip.label %in% rownames(OTU))
-phylotree$tip.label <- rownames(OTU)[match(phylotree$tip.label, rownames(OTU))]
-head(phylotree$tip.label)
-
 #phyloseq object
 phyloseq_file <- phyloseq(OTU, SAMP, TAX, phylotree)
 
@@ -53,7 +43,7 @@ sample_data(phyloseq_file)
 tax_table(phyloseq_file)
 phy_tree(phyloseq_file)
 
-###Old filtered phyloseq object retained as a control show test for cloroplasts works 
+###Old filtered phyloseq object retained as a control show test for cloroplasts works###
 phylsoseq_filtered_bad<- subset_taxa(phyloseq_file,  Domain == "d__Bacteria" & Class!="c__Chloroplast"& Family !="f__Mitochondria")
 phylsoseq_filtered_nolow_bad <- filter_taxa(phylsoseq_filtered_bad, function(x) sum(x)>5, prune = TRUE)
 phyloseq_final_bad <- prune_samples(sample_sums(phylsoseq_filtered_nolow_bad)>100, phylsoseq_filtered_nolow_bad)
