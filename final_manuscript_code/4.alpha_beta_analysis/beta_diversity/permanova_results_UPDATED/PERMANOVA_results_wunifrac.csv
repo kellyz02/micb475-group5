@@ -1,0 +1,15 @@
+"Order","Factor","R2","P_value"
+"Primates","Climate..basic.",0.140424215472597,0.001
+"Primates","captive_wild",0.104499842147745,0.001
+"Primates","Climate..basic.:captive_wild",0.755075942379658,NA
+"Tubulidentata","captive_wild",0.415655153515577,0.011
+"Pilosa","Climate..basic.",0.349246576061545,0.0666666666666667
+"Carnivora","Climate..basic.",0.253247078860327,0.126
+"Carnivora","captive_wild",0.746752921139673,NA
+"Carnivora","Climate..basic.:captive_wild",1,NA
+"Perissodactyla","Climate..basic.",0.0976662666395799,0.005
+"Perissodactyla","captive_wild",0.90233373336042,NA
+"Perissodactyla","Climate..basic.:captive_wild",1,NA
+"Cetartiodactyla","Climate..basic.",0.0872459248395385,0.001
+"Cetartiodactyla","captive_wild",0.912754075160461,NA
+"Cetartiodactyla","Climate..basic.:captive_wild",1,NA
